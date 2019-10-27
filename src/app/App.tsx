@@ -1,44 +1,35 @@
 import React from "react"
 import { CacheProvider } from "@emotion/core"
 import createCache from "@emotion/cache"
-import { Peace } from "./Peace"
-import { Map } from "./Map"
+import { Map as Graph } from "./Map"
 import { Camera } from "./Camera"
-import { Theme } from "./Theme"
 import { Variables } from "./Variables"
+import styled from "@emotion/styled"
 
-const randomColor = () => {
-  return (
-    "rgba(" +
-    [
-      Math.floor(Math.random() * 255),
-      Math.floor(Math.random() * 255),
-      Math.floor(Math.random() * 255),
-      0.5
-    ].join(",") +
-    ")"
-  )
-}
 export const myCache = createCache({
-  // key: "my-prefix-key",
-  prefix: false
+  prefix: true
 })
+const Text = styled.div`
+  font-size: 15vh;
+  font-weight: bold;
+  color: white;
+  -webkit-text-stroke: 6px black;
+  position: absolute;
+  transform: rotateZ(30deg) translate(10vw, 20vh);
+`
 export const App = () => {
   return (
     <CacheProvider value={myCache}>
-      <Theme>
-        <Variables>
-          <Camera>
-            <Map />
-            {/* <Peace color={randomColor()} />
-            <Peace color={randomColor()} />
-            <Peace color={randomColor()} /> */}
-            <Peace color="rgba(255,0,0,0.5)" />
-            <Peace color="rgba(0,255,0,0.5)" />
-            <Peace color="rgba(0,0,255,0.5)" />
-          </Camera>
-        </Variables>
-      </Theme>
+      <Variables>
+        <Camera>
+          <Graph />
+        </Camera>
+        <Text>
+          <div>圧倒的な成長率！</div>
+          <div>業界 No.1 !</div>
+        </Text>
+      </Variables>
+      {/* </Theme> */}
     </CacheProvider>
     // {/* </StyleSheetManager> */}
   )
