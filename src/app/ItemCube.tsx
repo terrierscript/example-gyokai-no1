@@ -10,13 +10,10 @@ export const Panel = styled.div<PanelProps>`
   position: absolute;
   height: ${VAR_SIZE};
   width: ${VAR_SIZE};
+  /* background: red; */
   background: linear-gradient(rgba(255, 0, 0), pink);
-  /* var(--color); */
-  /* border: var(--panel-border, 1px solid rgba(0, 0, 0, 1)); */
-  border: pink;
+  /* border: black solid 1px; */
 `
-
-// .attrs(({ x, y }) => ({ x, y }))
 
 const VAR_HEIGHT = "var(--height)"
 
