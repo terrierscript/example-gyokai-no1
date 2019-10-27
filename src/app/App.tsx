@@ -31,10 +31,10 @@ export const App = () => {
           <Camera>
             <Graph />
           </Camera>
-          {/* <Text>
+          <Text>
             <div>圧倒的な成長率！</div>
             <div>業界 No.1 !</div>
-          </Text> */}
+          </Text>
         </Variables>
         {/* </Theme> */}
       </CacheProvider>
